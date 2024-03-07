@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Recipe - Recipe Sharing Platform</title>
+    <link rel="stylesheet" href="css_recipe_main.css"> <!-- Ensure this points to your shared CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Recipe Sharing Platform</h1>
+        <nav>
+            <!-- Responsive navigation menu -->
+            <ul>
+                <li><a href="recipe_home_page.html">Home</a></li>
+                <li><a href="submit_recipe_page.html" class="active">Submit Recipe</a></li> <!-- Highlight as active if necessary -->
+                <li><a href="profile_page.html">My Profile</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="form-section">
+            <h2>Share Your Best Recipe</h2>
+            <form id="recipe-form">
+                <div class="form-group">
+                    <label for="recipe-title">Recipe Title</label>
+                    <input type="text" id="recipe-title" name="recipe-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipe-image">Recipe Image URL</label>
+                    <input type="url" id="recipe-image" name="recipe-image">
+                </div>
+                <div class="form-group">
+                    <label for="recipe-category">Category</label>
+                    <select id="recipe-category" name="recipe-category">
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="dessert">Dessert</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="recipe-ingredients">Ingredients</label>
+                    <textarea id="recipe-ingredients" name="recipe-ingredients" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="recipe-instructions">Instructions</label>
+                    <textarea id="recipe-instructions" name="recipe-instructions" rows="5" required></textarea>
+                </div>
+                <button type="submit">Submit Recipe</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Recipe Sharing Platform. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

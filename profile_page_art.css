@@ -1,0 +1,76 @@
+/* Base Variables */
+:root {
+    --primary-color: #ff6347; /* Tomato */
+    --secondary-color: #ffd700; /* Gold */
+    --accent-color: #ffa07a; /* Light Salmon, as an accent */
+    --text-color: #333333; /* Almost Black */
+    --background-color: #fdfdfd; /* Almost White */
+}
+
+/* Profile Section Styling */
+.profile-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-details, .favorite-meals, .meal-preference, .additional-info {
+    margin-bottom: 30px;
+}
+
+h2, h3 {
+    color: var(--primary-color);
+}
+
+/* Styling for form elements and text areas in the profile section */
+.form-group label, .additional-info label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+input[type="text"], input[type="url"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Meal preference radio button customization */
+.meal-preference form label {
+    margin-right: 20px;
+}
+
+/* Button Styling */
+.update-profile-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block; /* Center button */
+    width: max-content;
+    margin: 0 auto; /* Center button */
+}
+
+.update-profile-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .profile-section {
+        margin: 20px;
+    }
+}
+
+/* Active Link Styling for Navigation */
+nav a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}

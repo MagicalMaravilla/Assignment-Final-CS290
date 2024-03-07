@@ -1,0 +1,89 @@
+/* Base Variables */
+:root {
+    --primary-color: #ff6347; /* Tomato */
+    --secondary-color: #ffd700; /* Gold */
+    --accent-color: #ffa07a; /* Light Salmon, as an accent */
+    --text-color: #333333; /* Almost Black */
+    --background-color: #fdfdfd; /* Almost White */
+}
+
+/* Extending Base Styles */
+body, html {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Form Section */
+.form-section {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+form {
+    background-color: white;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 20px;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: .5rem;
+    color: var(--text-color);
+}
+
+input[type="text"], input[type="url"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        margin: 0 10px;
+        padding: 1rem;
+    }
+}
+
+/* Active Navigation Link */
+nav a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
