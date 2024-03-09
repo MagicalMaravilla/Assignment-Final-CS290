@@ -1,118 +1,135 @@
 /* Base Variables */
 :root {
-    --primary-color: #ff6347; /* Tomato */
-    --secondary-color: #ffd700; /* Gold */
-    --accent-color: #ffa07a; /* Light Salmon, as an accent */
-    --text-color: #333333; /* Almost Black */
-    --background-color: #fdfdfd; /* Almost White */
+    --primary-color: #ff6347; /* Primary accent color, a vibrant tomato shade. */
+    --secondary-color: #ffd700; /* Secondary elements color, a warm gold. */
+    --accent-color: #ffa07a; /* Color used for hover states and interactive elements, a light salmon. */
+    --text-color: #333; /* Main text color, a dark shade for contrast and readability. */
+    --background-color: #fdfdfd; /* General background color, an off-white for a clean look. */
 }
 
-/* Base settings */
+/* General base settings */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    font-family: 'Open Sans', sans-serif; /* The font family for the entire page. */
+    color: var(--text-color); /* Default text color applied. */
+    background-color: var(--background-color); /* Default background color applied. */
 }
 
-/* Header and Navigation */
+/* Header and navigation styling */
 header {
     background-color: var(--primary-color);
     color: var(--background-color);
-    padding: 20px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px 0; /* Top and bottom padding for header. */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow for depth perception. */
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
+    list-style: none; /* Removes default list styling. */
+    display: flex; /* Flex display for inline list items. */
+    justify-content: center; /* Centers navigation items horizontally. */
+    padding: 0; /* Removes default padding. */
 }
 
 nav li {
-    margin: 0 15px;
+    margin: 0 15px; /* Margin between navigation items. */
 }
 
 nav a {
-    color: var(--background-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--background-color); /* Link color matching the background of the header. */
+    text-decoration: none; /* Removes underline from links. */
+    transition: color 0.3s ease; /* Transition for color change on hover. */
 }
 
 nav a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color); /* Color change on hover for visual feedback. */
 }
 
-/* Main Content */
+/* Main content area */
 main {
-    padding: 20px;
+    padding: 20px; /* Padding around the main content for spacing. */
 }
 
 h2 {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Color for all h2 elements, following the theme. */
 }
 
-/* Recipe Cards */
-.recipe-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* Slider navigation buttons */
+.slide-left, .slide-right {
+    position: absolute; /* Position the navigation buttons absolutely. */
+    top: 50%; /* Align buttons vertically to the middle. */
+    transform: translateY(-50%); /* Offset transform for precise vertical alignment. */
+    background-color: var(--primary-color); /* Background color for buttons. */
+    color: var(--background-color); /* Text/icon color for buttons. */
+    border: none; /* Removes default border from buttons. */
+    padding: 10px; /* Padding within the buttons. */
+    cursor: pointer; /* Cursor pointer to indicate clickable area. */
+    z-index: 10; /* Z-index to ensure buttons are above other elements. */
 }
 
+.slide-left {
+    left: 10px; /* Positions the left button slightly from the left edge. */
+}
+
+.slide-right {
+    right: 10px; /* Positions the right button slightly from the right edge. */
+}
+
+/* Recipe cards container */
+.recipe-cards-slider {
+    display: flex; /* Display recipe cards in a row. */
+    overflow-x: scroll; /* Allow horizontal scrolling. */
+    scroll-behavior: smooth; /* Smooth scrolling when navigating. */
+    padding-bottom: 1rem; /* Space for scrollbar. */
+}
+
+/* Individual recipe card styling */
 .recipe-card {
+    min-width: 300px; /* Minimum width of each card. */
+    flex-shrink: 0; /* Prevents card from shrinking smaller than min-width. */
+    margin: 10px; /* Margin around cards for spacing. */
+    display: flex; /* Flex display to align image and description side by side. */
+    align-items: center; /* Vertically center content in the card. */
+    justify-content: center; /* Horizontally center content in the card. */
     background-color: var(--secondary-color);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 15px; /* Padding inside the card. */
+    border-radius: 8px; /* Rounded corners of the card. */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow for depth perception. */
 }
 
-.recipe-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+/* Image container adjustments */
+.image-container {
+    max-width: 50%; /* Maximum width of the image container. */
+    flex-grow: 1; /* Allows the image container to grow. */
+    /* Removed padding-top since we are now using max-width instead of aspect ratio. */
 }
 
-/* Forms and Buttons */
-input[type="text"], textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Image styling */
+.recipe-image {
+    max-width: 100%; /* Ensures image is responsive and does not exceed container width. */
+    height: auto; /* Height is automatic to maintain aspect ratio. */
+    object-fit: contain; /* Ensures image fits within its container. */
+    border-radius: 8px; /* Rounded corners for the image. */
 }
 
-button, .btn {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Recipe description styling */
+.recipe-description {
+    flex-grow: 2; /* Allows the text to take up remaining space. */
+    padding: 0 15px; /* Padding on left and right for the text. */
+    font-size: 1em; /* Text size is set to a readable level. */
+    text-align: justify; /* Justified text for a clean appearance. */
 }
 
-button:hover, .btn:hover {
-    background-color: var(--accent-color);
-}
-
-/* Footer */
-footer {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
-}
-
-/* Responsive Design Adjustments */
+/* Responsive design adjustments */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+    /* Adjustments for smaller screens */
+    .recipe-card {
+        flex-direction: column; /* Stack elements vertically. */
+        align-items: stretch; /* Stretch items to fit the width of the card. */
     }
-    
-    .recipe-cards {
-        grid-template-columns: 1fr;
+
+    .image-container {
+        width: 100%; /* Image takes full width on smaller screens. */
+        max-width: none; /* Overrides any max-width set previously. */
     }
 }

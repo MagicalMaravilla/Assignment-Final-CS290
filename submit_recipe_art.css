@@ -1,13 +1,19 @@
+/* Enhanced CSS for "Submit Your Recipe" page, including comments on changes */
+
 /* Base Variables */
 :root {
-    --primary-color: #ff6347; /* Tomato */
-    --secondary-color: #ffd700; /* Gold */
-    --accent-color: #ffa07a; /* Light Salmon, as an accent */
-    --text-color: #333333; /* Almost Black */
-    --background-color: #fdfdfd; /* Almost White */
+    --primary-color: #ff6347; /* Maintains site-wide color consistency */
+    --secondary-color: #ffd700; /* Gold, used for active nav link and other accents */
+    /* Additional meal-type colors for future JavaScript implementation */
+    --breakfast-color: blue;
+    --lunch-color: gold;
+    --dinner-color: var(--primary-color);
+    --dessert-color: pink;
+    --text-color: #333333; /* Almost Black for readability */
+    --background-color: #fdfdfd; /* Almost White for a clean background */
 }
 
-/* Extending Base Styles */
+/* Global Styles */
 body, html {
     font-family: 'Open Sans', sans-serif;
     color: var(--text-color);
@@ -21,69 +27,67 @@ header, footer {
     background-color: var(--primary-color);
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1rem; /* Consistent padding for visual balance */
 }
 
-/* Form Section */
+/* Styling for the recipe submission form */
 .form-section {
     display: flex;
     justify-content: center;
-    padding: 2rem 0;
+    padding: 40px 0; /* Increased padding for better visual separation from header/footer */
 }
 
 form {
     background-color: white;
-    max-width: 600px;
+    max-width: 600px; /* Limits form width for focus and readability */
     width: 100%;
-    margin: 0 20px;
-    padding: 2rem;
+    margin: 0 auto; /* Centers form within the section */
+    padding: 40px; /* Ample padding inside form for clear field separation */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Increased margin for clear delineation between fields */
 }
 
 label {
     display: block;
-    margin-bottom: .5rem;
+    margin-bottom: 10px; /* Space between label and input for clarity */
+    font-size: 1rem;
     color: var(--text-color);
 }
 
 input[type="text"], input[type="url"], select, textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: .5rem;
+    padding: 15px; /* Enhanced padding for easier interaction */
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
+/* Submit Button Enhancements */
 button[type="submit"] {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Default vibrant button color */
     color: white;
-    padding: 10px 15px;
+    padding: 15px 20px; /* Larger clickable area */
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem; /* Slightly larger text for emphasis */
+    width: auto; /* Adjust width based on content size */
+    display: block; /* Ensures button is block-level for margin auto to work */
+    margin: 0 auto; /* Centers button below form fields */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
 }
 
-button[type="submit"]:hover {
-    background-color: darken(var(--primary-color), 10%);
-}
-
-/* Responsive Design */
+/* Responsive adjustments for mobile and smaller devices */
 @media (max-width: 768px) {
     form {
-        margin: 0 10px;
-        padding: 1rem;
+        margin: 0 20px; /* Adjusts form margins on smaller screens */
+        padding: 20px; /* Reduces padding in smaller viewports for space efficiency */
     }
-}
-
-/* Active Navigation Link */
-nav a.active {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    .form-section {
+        padding: 20px 0; /* Less vertical padding on smaller screens */
+    }
 }

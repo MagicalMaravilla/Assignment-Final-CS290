@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit Your Recipe - Recipe Sharing Platform</title>
-    <link rel="stylesheet" href="css_recipe_main.css"> <!-- Ensure this points to your shared CSS file -->
+    <link rel="stylesheet" href="css_recipe_main.css">
 </head>
 <body>
     <header>
+        <!-- Header content remains unchanged for consistency across pages -->
         <h1>Recipe Sharing Platform</h1>
         <nav>
-            <!-- Responsive navigation menu -->
             <ul>
                 <li><a href="recipe_home_page.html">Home</a></li>
-                <li><a href="submit_recipe_page.html" class="active">Submit Recipe</a></li> <!-- Highlight as active if necessary -->
+                <li><a href="submit_recipe_page.html" class="active">Submit Recipe</a></li>
                 <li><a href="profile_page.html">My Profile</a></li>
                 <li><a href="signin.html">Sign In</a></li>
             </ul>
@@ -23,6 +23,7 @@
         <section class="form-section">
             <h2>Share Your Best Recipe</h2>
             <form id="recipe-form">
+                <!-- Form fields for recipe submission with increased spacing -->
                 <div class="form-group">
                     <label for="recipe-title">Recipe Title</label>
                     <input type="text" id="recipe-title" name="recipe-title" required>
@@ -48,7 +49,8 @@
                     <label for="recipe-instructions">Instructions</label>
                     <textarea id="recipe-instructions" name="recipe-instructions" rows="5" required></textarea>
                 </div>
-                <button type="submit">Submit Recipe</button>
+                <!-- Enhanced submit button with increased padding and centered alignment -->
+                <button type="submit" class="submit-btn">Submit Recipe</button>
             </form>
         </section>
     </main>

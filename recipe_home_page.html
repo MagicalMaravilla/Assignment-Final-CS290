@@ -23,18 +23,40 @@
         <!-- Featured Recipes Section -->
         <section id="featured-recipes">
             <h2>Featured Recipes</h2>
-            <div class="recipe-cards">
-                <!-- Recipe cards to be dynamically generated using JavaScript -->
+            <!-- Container for the slider with overflow hidden -->
+            <div class="slider-container">
+                <!-- Navigation button to slide left -->
+                <button class="slide-left" onclick="moveSlide(-1)">←</button>
+                <!-- Recipe cards wrapper -->
+                <div class="recipe-cards-slider">
+                    <!-- Individual recipe card for Tomato Pasta -->
+                    <div class="recipe-card" data-desc-file="tomato_pasta_desc.txt">
+                        <div class="image-container">
+                            <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2023/05/Bacon-Tomato-Pasta-SQ.jpg" alt="Tomato Pasta" class="recipe-image">
+                        </div>
+                        <div class="recipe-description">Loading description...</div>
+                    </div>
+                    <!-- Individual recipe card for another recipe, e.g., Basil Pesto Pasta -->
+                    <div class="recipe-card" data-desc-file="classic_slider_desc.txt">
+                        <div class="image-container">
+                            <img src="https://assets2.kansascitysteaks.com/dyn-images/pdp_hero/Sliders_SU18-75f5ae5a1c9d94f1b0e3e79282871f29.jpg" alt="Classic Sliders" class="recipe-image">
+                        </div>
+                        <div class="recipe-description">Loading description...</div>
+                    </div>
+                    <!-- Add more recipe cards as needed -->
+                </div>
+                <!-- Navigation button to slide right -->
+                <button class="slide-right" onclick="moveSlide(1)">→</button>
             </div>
         </section>
+            
 
         <!-- Recipe Search Section -->
         <section id="search">
             <h2>Search Recipes</h2>
-            <form id="search-form">
-                <input type="text" id="search-query" name="search-query" placeholder="Search recipes...">
-                <button type="submit">Search</button>
-            </form>
+            <script async src="https://cse.google.com/cse.js?cx=94d9221308065471a">
+            </script>
+            <div class="gcse-search"></div>
         </section>
 
         <!-- Categories Section -->
@@ -61,7 +83,7 @@
             </div>
         </section>
 
-        <!-- Sign Up Call to Action -->
+        <!-- Sign Up Here -->
         <section id="signup-cta">
             <h2>Join Our Community</h2>
             <p>Share your recipes, get personalized recommendations, and connect with food lovers.</p>
@@ -92,6 +114,6 @@
         </div>
         <p>&copy; 2024 Recipe Sharing Platform</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="client_side_logic_recipes.js"></script>
 </body>
 </html>
