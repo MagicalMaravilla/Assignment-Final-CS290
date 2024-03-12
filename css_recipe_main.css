@@ -1,135 +1,165 @@
 /* Base Variables */
 :root {
-    --primary-color: #ff6347; /* Primary accent color, a vibrant tomato shade. */
-    --secondary-color: #ffd700; /* Secondary elements color, a warm gold. */
-    --accent-color: #ffa07a; /* Color used for hover states and interactive elements, a light salmon. */
-    --text-color: #333; /* Main text color, a dark shade for contrast and readability. */
-    --background-color: #fdfdfd; /* General background color, an off-white for a clean look. */
+    /* Color scheme for website design */
+    --primary-color: #ff6347;
+    --secondary-color: #ffd700;
+    --accent-color: #ffa07a;
+    --text-color: #333;
+    --background-color: #fdfdfd;
+    
+    /* Design consistency variables */
+    --border-radius: 8px; /* Uniform border radius */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow effect */
+    --transition-speed: 0.3s; /* Smooth transition effect for interactions */
+    --font-main: 'Open Sans', sans-serif; /* Main font for readability */
+    
+    /* Spacing variables for layout consistency */
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 30px;
+    --max-container-width: 1200px; /* Max width for content alignment */
 }
 
 /* General base settings */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif; /* The font family for the entire page. */
-    color: var(--text-color); /* Default text color applied. */
-    background-color: var(--background-color); /* Default background color applied. */
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Header and navigation styling */
 header {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    padding: 20px 0; /* Top and bottom padding for header. */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow for depth perception. */
+    background-color: var(--primary-color); /* Header background */
+    padding: var(--spacing-medium); /* Padding for spacing */
+    width: 100%; /* Full width header */
+    box-shadow: var(--box-shadow); /* Shadow for depth */
+}
+
+header h1 {
+    color: var(--background-color); /* Header title color */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center align title */
 }
 
 nav ul {
-    list-style: none; /* Removes default list styling. */
-    display: flex; /* Flex display for inline list items. */
-    justify-content: center; /* Centers navigation items horizontally. */
-    padding: 0; /* Removes default padding. */
-}
-
-nav li {
-    margin: 0 15px; /* Margin between navigation items. */
+    list-style: none; /* Remove list styling */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Display nav items inline */
+    justify-content: center; /* Center nav items */
+    gap: var(--spacing-medium); /* Space between nav items */
 }
 
 nav a {
-    color: var(--background-color); /* Link color matching the background of the header. */
-    text-decoration: none; /* Removes underline from links. */
-    transition: color 0.3s ease; /* Transition for color change on hover. */
+    text-decoration: none; /* Remove link underline */
+    color: var(--background-color); /* Link color */
+    font-weight: bold; /* Bold font for links */
+    transition: color var(--transition-speed); /* Smooth color transition */
 }
 
 nav a:hover {
-    color: var(--accent-color); /* Color change on hover for visual feedback. */
+    color: var(--accent-color); /* Hover effect color change */
 }
 
 /* Main content area */
 main {
-    padding: 20px; /* Padding around the main content for spacing. */
+    padding: var(--spacing-medium); /* Content padding */
+    width: 90%; /* Responsive width */
+    max-width: var(--max-container-width); /* Max width constraint */
 }
 
 h2 {
-    color: var(--primary-color); /* Color for all h2 elements, following the theme. */
+    color: var(--primary-color); /* Secondary heading color */
 }
 
 /* Slider navigation buttons */
 .slide-left, .slide-right {
-    position: absolute; /* Position the navigation buttons absolutely. */
-    top: 50%; /* Align buttons vertically to the middle. */
-    transform: translateY(-50%); /* Offset transform for precise vertical alignment. */
-    background-color: var(--primary-color); /* Background color for buttons. */
-    color: var(--background-color); /* Text/icon color for buttons. */
-    border: none; /* Removes default border from buttons. */
-    padding: 10px; /* Padding within the buttons. */
-    cursor: pointer; /* Cursor pointer to indicate clickable area. */
-    z-index: 10; /* Z-index to ensure buttons are above other elements. */
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: var(--spacing-small);
+    cursor: pointer;
+    z-index: 10;
 }
 
 .slide-left {
-    left: 10px; /* Positions the left button slightly from the left edge. */
+    left: var(--spacing-medium);
 }
 
 .slide-right {
-    right: 10px; /* Positions the right button slightly from the right edge. */
+    right: var(--spacing-medium);
 }
 
 /* Recipe cards container */
 .recipe-cards-slider {
-    display: flex; /* Display recipe cards in a row. */
-    overflow-x: scroll; /* Allow horizontal scrolling. */
-    scroll-behavior: smooth; /* Smooth scrolling when navigating. */
-    padding-bottom: 1rem; /* Space for scrollbar. */
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding-bottom: var(--spacing-small);
 }
 
 /* Individual recipe card styling */
 .recipe-card {
-    min-width: 300px; /* Minimum width of each card. */
-    flex-shrink: 0; /* Prevents card from shrinking smaller than min-width. */
-    margin: 10px; /* Margin around cards for spacing. */
-    display: flex; /* Flex display to align image and description side by side. */
-    align-items: center; /* Vertically center content in the card. */
-    justify-content: center; /* Horizontally center content in the card. */
     background-color: var(--secondary-color);
-    padding: 15px; /* Padding inside the card. */
-    border-radius: 8px; /* Rounded corners of the card. */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Shadow for depth perception. */
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
 }
 
 /* Image container adjustments */
 .image-container {
-    max-width: 50%; /* Maximum width of the image container. */
-    flex-grow: 1; /* Allows the image container to grow. */
-    /* Removed padding-top since we are now using max-width instead of aspect ratio. */
+    flex-grow: 1;
 }
 
 /* Image styling */
 .recipe-image {
-    max-width: 100%; /* Ensures image is responsive and does not exceed container width. */
-    height: auto; /* Height is automatic to maintain aspect ratio. */
-    object-fit: contain; /* Ensures image fits within its container. */
-    border-radius: 8px; /* Rounded corners for the image. */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--border-radius);
 }
 
 /* Recipe description styling */
 .recipe-description {
-    flex-grow: 2; /* Allows the text to take up remaining space. */
-    padding: 0 15px; /* Padding on left and right for the text. */
-    font-size: 1em; /* Text size is set to a readable level. */
-    text-align: justify; /* Justified text for a clean appearance. */
+    flex-grow: 2;
+    padding: 0 var(--spacing-small);
+    font-size: 1em;
+    text-align: justify;
+    overflow-y: auto;
 }
 
-/* Responsive design adjustments */
+/* Map Container Styling */
+#map-container {
+    margin: var(--spacing-large) 0; /* Add some vertical spacing around the map container */
+    width: 100%; /* Ensure the map container spans the full width */
+    max-width: var(--max-container-width); /* Respect the max container width */
+    box-shadow: var(--box-shadow); /* Consistent shadow effect for depth */
+    border-radius: var(--border-radius); /* Rounded corners for the map container */
+}
+
+/* Google Search Section Styling Adjustments */
+#google-search {
+    padding: var(--spacing-medium); /* Consistent padding with the rest of the sections */
+    background-color: var(--accent-color); /* Accent background for distinction */
+    border-radius: var(--border-radius); /* Consistent border radius */
+    box-shadow: var(--box-shadow); /* Shadow for depth */
+    margin-bottom: var(--spacing-large); /* Spacing before the next section */
+}
+
+/* Responsive Design Adjustments */
 @media (max-width: 768px) {
-    /* Adjustments for smaller screens */
     .recipe-card {
-        flex-direction: column; /* Stack elements vertically. */
-        align-items: stretch; /* Stretch items to fit the width of the card. */
+        flex-direction: column;
+        align-items: stretch;
     }
-
-    .image-container {
-        width: 100%; /* Image takes full width on smaller screens. */
-        max-width: none; /* Overrides any max-width set previously. */
+    .image-container, .recipe-description {
+        width: 100%;
     }
 }
+
+/* Add further media query adjustments as needed */
